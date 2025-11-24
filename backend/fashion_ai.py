@@ -90,7 +90,38 @@ INVENTORY_DATA = {
         "material": "Denim",
         "season_suitability": "Winter, Fall, Spring, Summer",
         "description": "Slim fit, professional."
+    },
+    "Bottoms/lightwashjeans.jpg": {
+        "clothing_type": "Jeans",
+        "color": "Light Wash Blue",
+        "material": "Denim",
+        "season_suitability": "Winter, Fall, Spring, Summer",
+        "description": "Chill stacked fit fun"
+    },
+    "Bottoms/graysweats.jpg": {
+        "clothing_type": "Sweatpants",
+        "color": "Gray",
+        "material": "Cotton",
+        "season_suitability": "Winter, Fall, Spring, Summer",
+        "description": "Lazy comfortable warm cozy"
+    },
+    "Bottoms/bluejeans.jpg": {
+        "clothing_type": "Jeans",
+        "color": "Blue",
+        "material": "Denim",
+        "season_suitability": "Winter, Fall, Spring, Summer",
+        "description": "Most basic blue jeans very safe common"
+    },
+    "Bottoms/A46740001-front-gstk.jpeg": {
+        "clothing_type": "Chinos",
+        "color": "Khaki",
+        "material": "Cotton",
+        "season_suitability": "Winter, Fall, Spring, Summer",
+        "description": "Light colored chinos very versatile"
     }
+    
+    
+    
 }
 
 OUTFIT_SCHEMA = types.Schema(
