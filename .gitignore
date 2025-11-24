@@ -1,0 +1,17 @@
+# ENV files
+.env
+backend/.env
+
+# Python cache
+__pycache__/
+*.pyc
+
+# FastAPI uploads/output
+backend/uploads/
+backend/test3.png
+
+# Virtual environment
+.venv/
+
+# Node modules
+frontend/node_modules/

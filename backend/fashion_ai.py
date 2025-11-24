@@ -1,6 +1,7 @@
 from google import genai
 from google.genai import types
 from PIL import Image
+from dotenv import load_dotenv
 from io import BytesIO
 import os
 import json
@@ -11,9 +12,15 @@ import base64
 frontend_input = "Make me a dark and casual outfit for fall" 
 frontend_image = "profile/person.png"
 
-BASE_CLOSET_PATH = "/Users/senay/Gemini-App/backend"
+BASE_CLOSET_PATH = os.path.dirname(__file__)
+dotenv_path = os.path.join(BASE_CLOSET_PATH, ".env")
+load_dotenv(dotenv_path=dotenv_path)
 MY_API_KEY = os.getenv("GEMINI_API_KEY")
-MY_API_KEY = "AIzaSyC9MGtG_n_4oXfb0-iBWQbMahDzwrkBXiU"
+
+if not MY_API_KEY:
+    raise RuntimeError(
+        "GEMINI_API_KEY is not set. Add it to your .env file or environment."
+    )
 
 client = genai.Client(api_key=MY_API_KEY)
 
@@ -119,9 +126,6 @@ INVENTORY_DATA = {
         "season_suitability": "Winter, Fall, Spring, Summer",
         "description": "Light colored chinos very versatile"
     }
-    
-    
-    
 }
 
 OUTFIT_SCHEMA = types.Schema(
