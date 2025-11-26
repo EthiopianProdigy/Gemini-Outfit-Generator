@@ -14,10 +14,18 @@ load_dotenv()
 
 app = FastAPI()
 
+BASE_DIR = os.path.dirname(__file__)
+
+# Serve everything under backend/ at /images
+app.mount(
+    "/images",
+    StaticFiles(directory=BASE_DIR),
+    name="images",
+)
+
 # Serve static images from the backend folder (Tops/ and Bottoms/)
 STATIC_ROOT = os.path.dirname(__file__)
 
-load_dotenv()
 
 FRONTEND_PROD = os.getenv("FRONTEND_URL", "")  # will be your Vercel URL in prod
 

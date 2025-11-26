@@ -48,7 +48,7 @@ export default function HomePage() {
     formData.append("image", profileImageFile);
 
     try {
-      const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000";
+     
 
       const res = await fetch(`${API_BASE}/api/upload-person-image`, {
         method: "POST",
@@ -108,7 +108,6 @@ export default function HomePage() {
         formData.append("image", file);
       }
 
-      const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000";
 
       const res = await fetch(`${API_BASE}/api/generate-outfit`, {
         method: "POST",
