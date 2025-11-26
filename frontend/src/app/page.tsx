@@ -9,24 +9,25 @@ interface ChatMessage {
   imageBase64?: string;
 }
 
+const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000";
+
 const TOPS = [
-  { src: "http://localhost:8000/images/Tops/hoodie1.jpg", label: "Red hoodie" },
-  { src: "http://localhost:8000/images/Tops/hoodie2.jpg", label: "Brown hoodie" },
-  { src: "http://localhost:8000/images/Tops/jacket1.jpg", label: "Black jacket" },
-  { src: "http://localhost:8000/images/Tops/sweater1.jpg", label: "Grey sweater" },
-  { src: "http://localhost:8000/images/Tops/polo1.jpg", label: "Black polo" },
-  { src: "http://localhost:8000/images/Tops/polo2.jpg", label: "Green polo" },
-  { src: "http://localhost:8000/images/Tops/polo3.jpg", label: "Blue polo" },
+  { src: `${API_BASE}/images/Tops/hoodie1.jpg`, label: "Red hoodie" },
+  { src: `${API_BASE}/images/Tops/hoodie2.jpg`, label: "Brown hoodie" },
+  { src: `${API_BASE}/images/Tops/jacket1.jpg`, label: "Black jacket" },
+  { src: `${API_BASE}/images/Tops/sweater1.jpg`, label: "Grey sweater" },
+  { src: `${API_BASE}/images/Tops/polo1.jpg`, label: "Black polo" },
+  { src: `${API_BASE}/images/Tops/polo2.jpg`, label: "Green polo" },
+  { src: `${API_BASE}/images/Tops/polo3.jpg`, label: "Blue polo" },
 ];
 
 const BOTTOMS = [
-  { src: "http://localhost:8000/images/Bottoms/jeans1.jpg", label: "Black jeans" },
-  { src: "http://localhost:8000/images/Bottoms/jeans2.jpg", label: "Blue jeans" },
-  { src: "http://localhost:8000/images/Bottoms/jeans3.jpg", label: "Slim black jeans" },
-  { src: "http://localhost:8000/images/Bottoms/lightwashjeans.jpg", label: "Slim black jeans" },
-  { src: "http://localhost:8000/images/Bottoms/jeans4.jpg", label: "Slim black jeans" },
-  { src: "http://localhost:8000/images/Bottoms/graysweats.jpg", label: "Slim black jeans" },
-  { src: "http://localhost:8000/images/Bottoms/A46740001-front-gstk.jpeg", label: "Slim black jeans" }
+  { src: `${API_BASE}/images/Bottoms/jeans1.jpg`, label: "Black jeans" },
+  { src: `${API_BASE}/images/Bottoms/jeans2.jpg`, label: "Blue jeans" },
+  { src: `${API_BASE}/images/Bottoms/jeans3.jpg`, label: "Slim black jeans" },
+  { src: `${API_BASE}/images/Bottoms/lightwashjeans.jpg`, label: "Light wash jeans" },
+  { src: `${API_BASE}/images/Bottoms/graysweats.jpg`, label: "Grey sweats" },
+  { src: `${API_BASE}/images/Bottoms/A46740001-front-gstk.jpeg`, label: "Khaki chinos" }
 ];
 
 export default function HomePage() {
