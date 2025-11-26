@@ -17,25 +17,22 @@ app = FastAPI()
 # Serve static images from the backend folder (Tops/ and Bottoms/)
 STATIC_ROOT = os.path.dirname(__file__)
 
-app.mount(
-    "/images",
-    StaticFiles(directory=STATIC_ROOT),
-    name="images",
-)
+load_dotenv()
 
-# 🔥 CORS CONFIG – allow localhost:3000 explicitly
-origins = [
+FRONTEND_PROD = os.getenv("FRONTEND_URL", "")  # will be your Vercel URL in prod
+
+LOCAL_ALLOWED = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
 ]
 
+origins = LOCAL_ALLOWED + ([FRONTEND_PROD] if FRONTEND_PROD else [])
+
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000",
-        "http://127.0.0.1:3000",
-    ],
-    allow_credentials=True,        # required if you pass cookies (you do not)
+    allow_origins=origins,
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
